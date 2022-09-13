@@ -2,7 +2,7 @@
 {
     "name":"Mario",
     "description":"A good, pixelated mini chad, specialised in saving pricesses",
-    "image":"This is a placeholder for the IPFS link of the image",
+    "image":"https://ipfs.io/ipfs/QmYgJLuHfgdHq6LkPj549bUyqA7BQir9fTbxxhYAmCy5KJ",
     "attributes":[
         {
             "trait_type":"Strength",

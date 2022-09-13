@@ -18,12 +18,12 @@ contract SuperMarioWorld is ERC721 {
    
 
     //returns an URI - the url that points to the metadata. NFT marketplaces call this function in order to retrieve the nft information 
-    function tokenURI (uint _tokenId) external view returns (string memory ) {       // NFT metadata 
+    function tokenURI (uint _tokenId) public  view returns (string memory ) {       // NFT metadata 
         require( _owners[_tokenId]!=address(0), "Token does not exist");
         return tokenURIs[_tokenId];
     }
 
-    function mint (string memory _tokenURI)  external {
+    function mint (string memory _tokenURI)  public  {
         tokenCount += 1;                                // increments the counter, used forsetting the tokenId
         _balances[msg.sender] +=1;                      
         _owners[tokenCount] = msg.sender;

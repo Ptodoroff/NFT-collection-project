@@ -1,31 +1,22 @@
-// We require the Hardhat Runtime Environment explicitly here. This is optional
-// but useful for running the script in a standalone fashion through `node <script>`.
-//
-// You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
-// will compile your contracts, add the Hardhat Runtime Environment's members to the
-// global scope, and execute the script.
-const hre = require("hardhat");
+const {ethers} = require ("hardhat");         // adding the ethers.js library provided by hardhat;
 
-async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+async function main() {                       // deployment code is contained here
 
-  const lockedAmount = hre.ethers.utils.parseEther("1");
+  const SuperMarioWorld = await ethers.getContractFactory("SuperMarioWorld");  // this ethers.js method gets my compiled contract that I will deploy
+  const superMarioWorld = await SuperMarioWorld.deploy("SuperMarioWorld", "SPRM"); // this is deploying the contract. the arguments in the brackets are the one, required by the contract's constructor
 
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  await superMarioWorld.deployed();  //awaits for the contract to get deployed before doing anything further
 
-  await lock.deployed();
+  console.log("contract deployed to Mumbai at address:" + superMarioWorld.address);
 
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
-}
+  await superMarioWorld.mint("https://ipfs.io/ipfs/QmYHDKxEKzxa9aLEsC5HJcmpLfjCcB8XyD5fAhzV5pPKTd")    // I  directly invoke the mint function upon deployment. it accepts the IPFS link of the JSON file, containing the metadata of the NFT that i want to mint.
 
-// We recommend this pattern to be able to use async/await everywhere
-// and properly handle errors.
+
+}       //braces!
+
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+

@@ -1,4 +1,4 @@
-pragma solidiy 0.8.15;
+pragma solidity 0.8.9;
 
 contract ERC721 {
     mapping (uint => address)  _owners;
@@ -22,13 +22,13 @@ contract ERC721 {
     }
 
 
-    //enables or disables an operator to manage all of tthe msg.sender's tokens
+    //enables or disables an operator to manage all of the msg.sender's tokens
     function seatApprovalForAll(address operator, bool approved) external {
         operatorApprovals[msg.sender][operator] = approved;
         emit approvalForAll(msg.sender,operator,approved);
 
     }
- // checks if and address is an operaotr for another address 
+ // checks if and address is an operator for another address 
     function isApprovedForAll (address owner, address operator)public  view returns(bool) {
         return operatorApprovals[owner][operator];
  
@@ -87,8 +87,8 @@ contract ERC721 {
 
     //erc165 - queries if another contract supports another interface
     //Opensea uses this function to see if this is a compatible NFT contract. It invokes it on our nft contract to see if it is indeed erc721 compatible 
-    function supportsInterface(bytes4) public pure virtual returns(bool){
-      return interfaceId == 0x80ac58cd   //the interface of the ERC721 contract
+    function supportsInterface(bytes4 interfaceId) public pure virtual returns(bool ){
+      return interfaceId == 0x80ac58cd;                                      //the interface of the ERC721 contract. This function is created for the ease of the NFT marketplaces. It also tells the marketplace what functions we have in our contract 
 
     }
 

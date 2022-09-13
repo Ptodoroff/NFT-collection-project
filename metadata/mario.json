@@ -1,0 +1,30 @@
+
+{
+    "name":"Mario",
+    "description":"A good, pixelated mini chad, specialised in saving pricesses",
+    "image":"This is a placeholder for the IPFS link of the image",
+    "attributes":[
+        {
+            "trait_type":"Strength",
+            "value":7,
+            "max_value":10
+        },
+        {
+            "trait_type":"Speed",
+            "value":9,
+            "max_value":10
+        },
+        {
+            "trait_type":"Stamina",
+            "value":4,
+            "max_value":10
+        },
+        {
+            "trait_type":"Damage",
+            "value":9,
+            "max_value":10
+        }
+
+    ]
+
+}

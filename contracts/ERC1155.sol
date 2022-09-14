@@ -2,6 +2,7 @@ pragma solidity 0.8.9;
 
 contract ERC1155 {
 event ApprovalForAll(address indexed _owner, address indexed _operator, bool _value);
+event transferBatch( address _operator, address _from, address _to, uint[] _ids, uint[] _values);
 event TransderSingle(address indexed _operator, address indexed  _from, address indexed _to, uint _id, uint _amount );
 //mapping from token id to account balances . Accepts the token id and the account that we query for as arguments. The result is an uint , 
 //which represents how many copies of the particular token id the account owns. 
@@ -57,5 +58,34 @@ require (checkOnERC1155Received(),"Receiver is not implemented");
 function checkOnERC1155Received() private pure returns (bool){
     return true;                                        // this is a dummy function , not how it really works
 }
+
+function checkOnBatchERC1155Received () private pure returns (bool){
+    return true;                                        // this is a dummy function , not how it really works
+}
+function safebatchTransferFrom(address _from, address _to, uint[] memory _ids, uint[] memory _amounts ) public {     // same as safetarnsferfrom, but transfers batches of nfts and their corresponding amounts, hence the arrays as inputs.
+require(_from == msg.sender || isApprovedForAll(_from, msg.sender), "msg.sender is not the owner or approved for transfer");
+ require(_to!=address(0), "Cannot transfer to the zero address");
+require (_ids.length==_amounts.length, "Lenght and amount arrays should be of the same length!");
+require (checkOnBatchERC1155Received(),"Receiver is not implemented");
+
+for (uint i =0; i<_ids.length; i++) {
+    uint id = _ids[i];
+    uint amount = _amounts [i];
+    _transfer(_from,_to,id,amount);
+}
+emit transferBatch(msg.sender,_from,_to,_ids,_amounts);
+}
+
+//tells everyone (the nft marketplaces) that this contract supports all the erc1155 functions
+
+function supportsInterface (bytes4 interfaceId) public pure virtual returns (bool){
+    return interfaceId==0xd9b67a86;                             // this is the interfaceid from the original EIP that represents the functions of the erc 1155
+
+    /*
+        When deployong to an nft marketplace, the marketplace would "ask " the contract if its supports erc1155 functionality. It is doing it by "calling" this function and inputting 0xd9b67a86 as an argument. If it returns true, it accepts the contract, otherwise it rejects it. 
+    */
+}
+
+
 }
 

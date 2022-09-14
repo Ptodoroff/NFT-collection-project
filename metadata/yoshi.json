@@ -1,0 +1,58 @@
+
+{
+    "name":"Yoshi",
+    "description":"MArio and Luigi's best companion - the brave dragon",
+    "image":"https://ipfs.io/ipfs/QmeUVwxj7xTfB8raUZwPgAf5ZBC9kc3JnzZUWxg58tx2RV",
+    "attributes":[
+        {
+            "trait_type":"Strength",
+            "value":5,
+            "max_value":10
+        },
+        {
+            "trait_type":"Speed",
+            "value":10,
+            "max_value":10
+        },
+        {
+            "trait_type":"Stamina",
+            "value":10,
+            "max_value":10
+        },
+        {
+            "trait_type":"Damage",
+            "value":10,
+            "max_value":10
+        },
+        {
+        "display_type":"boost_number",
+        "trait_type":"Jump",
+        "value":1
+        },
+        {
+            "trait_type":"Jump",
+            "value":10,
+            "max_value":10
+        },
+        {
+            "display_type":"boost_percentage",
+            "trait_type":"Sigma Chad Dinosaur",
+            "value":20
+        },
+        {
+            "display_type":"number",
+            "trait_type":"Generation",
+            "value":1
+        },
+        {
+            "trait_type":"Knows Andrew Tate Personally",
+            "value":"True"
+        },
+        {
+            "trait_type":"Brave",
+            "value":"True"
+        }
+
+    ]
+
+}

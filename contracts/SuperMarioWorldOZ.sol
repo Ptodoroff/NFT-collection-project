@@ -5,7 +5,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract SuperMarioWolrdOZ is ERC721URIStorage {
+contract SuperMarioWorldOZ is ERC721URIStorage {
     using Counters for Counters.Counter;                //increments,decrements or resets a value. Used here to increment the tokenCounter
     Counters.Counter private _tokenIds;
 

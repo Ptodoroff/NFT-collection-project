@@ -1,2 +1,8 @@
 This project demonstrates my ability to create and deploy NFT contracts uing Hardhat.
-The contract is deployed on Mumbai testnet at https://mumbai.polygonscan.com/address/0xB48264971596d0f7023Cf8c806Aaa3F9C963bb28
+
+Tech stack used:
+-Javascript
+-React
+-Solidity
+-Axios
+-Styled components

@@ -31,5 +31,5 @@ contract SuperMarioWorldERC1155 is ERC1155 {
 
     function supportsInterface (bytes4 interfaceId) public pure override returns (bool){
     return interfaceId==0xd9b67a86 || interfaceId == 0x0e89341c;        // the second interface Id checks if we support uri function that retrieves the uri and (consequently ) the metadata, which helps the marketplace to visualise the nft easier
-
+    }
 }

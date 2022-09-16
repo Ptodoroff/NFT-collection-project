@@ -2,7 +2,7 @@ const {ethers} = require ("hardhat");         // adding the ethers.js library pr
 
 async function main() {                       // deployment code is contained here
 
-  const SuperMarioWorld = await ethers.getContractFactory("SuperMarioWorld1155");  // this ethers.js method gets my compiled contract that I will deploy
+  const SuperMarioWorld = await ethers.getContractFactory("SuperMarioWorldERC1155");  // this ethers.js method gets my compiled contract that I will deploy
   const superMarioWorld = await SuperMarioWorld.deploy("SuperMarioWorld1155", "SPRM1155"); // this is deploying the contract. the arguments in the brackets are the one, required by the contract's constructor
 
   await superMarioWorld.deployed();  //awaits for the contract to get deployed before doing anything further

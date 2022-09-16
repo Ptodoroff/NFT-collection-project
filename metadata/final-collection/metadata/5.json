@@ -1,0 +1,66 @@
+
+{
+    "name":"Tommy",
+    "description":"The definition of the sigma male. ",
+    "image":"https://ipfs.io/ipfs/QmZPVKSoxFJzkh82oNTNp7Mx7gJzRZp68ZB6WWvBd5SV68/5.jpg",
+    "attributes":[
+        {
+            "trait_type":"Strength",
+            "value":9999999,
+            "max_value":9999999
+        },
+        {
+            "trait_type":"Swag",
+            "value":9999999,
+            "max_value":9999999
+        },
+        {
+            "trait_type":"Style",
+            "value":9999999,
+            "max_value":9999999
+        },
+        {
+            "trait_type":"Damage",
+            "value":9999999,
+            "max_value":9999999
+        },
+        {
+        "display_type":"boost_number",
+        "trait_type":"cigarette burner",
+        "value":10000
+        },
+        {
+            "trait_type":"Jump",
+            "value":10,
+            "max_value":10
+        },
+        {
+            "display_type":"boost_percentage",
+            "trait_type":"Speed",
+            "value":20
+        },
+        {
+            "display_type":"number",
+            "trait_type":"Generation",
+            "value":1
+        },
+        {
+            "trait_type":"Humble",
+            "value":"True"
+        },
+        {
+            "trait_type":"Brave",
+            "value":"True"
+        }
+        {
+            "trait_type":"Prefers guns ",
+            "value":"True"
+        }
+        {
+            "trait_type":"In the bleak mid-winter ",
+            "value":"True"
+        }
+
+    ]
+
+}

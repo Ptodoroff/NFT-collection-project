@@ -3,7 +3,7 @@ pragma solidity 0.8.9;
 contract ERC1155 {
 event ApprovalForAll(address indexed _owner, address indexed _operator, bool _value);
 event transferBatch( address _operator, address _from, address _to, uint[] _ids, uint[] _values);
-event TransderSingle(address indexed _operator, address indexed  _from, address indexed _to, uint _id, uint _amount );
+event TransferSingle(address indexed _operator, address indexed  _from, address indexed _to, uint _id, uint _amount );
 //mapping from token id to account balances . Accepts the token id and the account that we query for as arguments. The result is an uint , 
 //which represents how many copies of the particular token id the account owns. 
 //Copies in NFTs? Yeah, ERC1155 strandard blurs the line between fungibility and non-fungibility
@@ -52,7 +52,7 @@ function safeTransferFrom(address _from, address _to, uint _id,uint _amount )pub
 require(_from == msg.sender || isApprovedForAll(_from, msg.sender), "msg.sender is not the owner or approved for transfer");
  require(_to!=address(0), "Cannot transfer to the zero address");
 _transfer(_from,_to,_id,_amount);
-emit TransderSingle(msg.sender,_from,_to,_id,_amount);
+emit TransferSingle(msg.sender,_from,_to,_id,_amount);
 require (checkOnERC1155Received(),"Receiver is not implemented");
 }
 function checkOnERC1155Received() private pure returns (bool){

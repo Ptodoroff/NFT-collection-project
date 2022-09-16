@@ -63,7 +63,7 @@ function App() {
 }
 
 /*The modal component pops up when a user clicks on an NFT*/
-const NFTModal (props) => {
+const NFTModal = (props) => {
   return (
     <Modal>
       <ModalContent></ModalContent>
@@ -73,13 +73,32 @@ const NFTModal (props) => {
 }
 
 //the z-index attribute makes sure that this components stays on top of everything else
+//height and width to make sure it fills up the entire screen
+//overflow set to auto enables scroll if needed 
+// background-color: rgba(0,0,0, 0.5); - sets the modal color to black, with 50% opacity
+
 const Modal = styled.div`
 position: fixed;
 display:flex;
 align-items:center;
 z-index:100;
+left:0;
+top:0;
+width: 100%;
+height:100%;
+overflow: auto;
+background-color: rgba(0,0,0, 0.5);   
+`;
 
+const ModalContent = styled.div`
+position: relative;
+width: 900px;
+margin: auto;
+background-color:white;
+border-radius:20px;
+padding:20px
 `
+
 const Title = styled.h1`
 margin: 1;
 text-align: center;

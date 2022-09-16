@@ -33,7 +33,7 @@ contract SuperMarioWorldCollection is ERC1155, Ownable {
     function uri (uint tokenId) public view override returns (string memory) {
         return string ( abi.encodePacked(
             baseUri,
-            Strings.toString(tokenId),
+            Strings.toString(tokenId),  
             ".json")
         );
 

@@ -5,7 +5,7 @@ async function main() {                       // deployment code is contained he
   const SuperMarioWorld = await ethers.getContractFactory("SuperMarioWorldCollection");  // this ethers.js method gets my compiled contract that I will deploy
   const superMarioWorld = await SuperMarioWorld.deploy("SuperMarioWorldCollection",
    "SMWC",
-   "https://ipfs.io/ipfs/QmYQ8Pznptz5LPpC6baXeqDb3taESkKv3waMCRr8hGq649/"
+   "https://ipfs.io/ipfs/QmVpuSkFWvAxruYRiRwkUWjvmoeovbQ7NbQLCnpoEgja21/"
    ); 
    // this is deploying the contract. the arguments in the brackets are the one, required by the contract's constructor PAY ATTENTION TO HOW I PASS THE STRING FOR THE TOKEN URI -  the uri is the uri of the folder 
    // FOOLOWED BY A BACKSLASH !!!!!! 

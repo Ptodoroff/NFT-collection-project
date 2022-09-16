@@ -4,7 +4,7 @@ const NFTCard = (props) =>{
    
     return (
      
-     <NftCard style = {{ margin:"15px"}}>
+     <NftCard style = {{ margin:"15px"}} onClick ={()=>props.toggleModal()}>
       <NftPhoto style ={{backgroundImage:`url(${nft && nft.image})`}}/> 
       <div style = {{margin: "5px"}}>
         <NftCollectiontext>{nft && nft.symbol}</NftCollectiontext>
